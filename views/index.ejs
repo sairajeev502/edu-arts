@@ -42,12 +42,11 @@ https://templatemo.com/tm-557-grad-school
     <nav id="menu" class="main-nav" role="navigation">
       <ul class="main-menu">
         <li><a href="#section1">Home</a></li>
-        <li class="has-submenu"><a href="#section2">About Us</a>
-          
-        </li>
-        <li><a href="/course">Courses</a></li>
+        <li><a href="#section2">About Us</a></li>
+        <li><a href="#section4">Courses</a></li>
         <!-- <li><a href="#section5">Video</a></li> -->
         <li><a href="#section6">Contact</a></li>
+        <li><a href="/signup">SignUp</a></li>
         <li><a href="https://templatemo.com" class="external">External</a></li>
       </ul>
     </nav>
@@ -213,7 +212,7 @@ fee is 6000 (including materials)</p>
                 </div>
               </article>
               <article id='tabs-4'>
-                <section class="section courses" data-section="section4">
+                <section class="section courses">
                   <div class="container-fluid">
                     <div class="row">
 
@@ -625,7 +624,7 @@ fee is 6000 (including materials)</p>
           if($(e.target).hasClass('external')) {
             return;
           }
-          e.preventDefault();
+          // e.preventDefault();
           $('#menu').removeClass('active');
           showSection($(this).attr('href'), true);
         });

@@ -4,17 +4,21 @@ const path=require('path');
 
 app.use(express.static("public"));
 app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"/views"));
 
-app.use(express.static(path.join(__dirname,"/public")));
 
 app.get("/",(req,res)=>{
   res.render("index");
 });
-app.get("/course",(req,res)=>{
-  res.render("courses");
+app.get("/signup",function(req,res){
+  res.render("signup");
+});
+app.get("/login",function(req,res){
+  res.render("login");
+});
+app.get("/",function(req,res){
+  res.render("index");
 });
 
-app.listen(3000,function(){
-  console.log("Server is listening at port 3000");
+app.listen(8000,function(){
+  console.log("Server is listening on port 8000");
 });
