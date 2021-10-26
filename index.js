@@ -18,6 +18,9 @@ app.get("/login",function(req,res){
 app.get("/",function(req,res){
   res.render("index");
 });
+app.get("/courseRegisterform",function(req,res){
+  res.render("courseRegisterform");
+});
 
 app.listen(8000,function(){
   console.log("Server is listening on port 8000");
