@@ -503,9 +503,9 @@ section.why-us {
 #tabs ul {
   margin: 0;
   padding: 0;
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
   -webkit-column-gap: 0;
   -moz-column-gap: 0;
   column-gap: 0;
@@ -516,11 +516,17 @@ section.why-us {
   display: table;
 }
 #tabs ul li {
-  display: block;
-  font-weight: 400;
-  font-size: 1.2em;
-  letter-spacing: 1px;
-  text-align: center;
+
+  font-weight: 250;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  list-style-type: square;
+
+}
+@media screen and (max-width:600px){
+  #tabs ul li{
+
+  }
 }
 #tabs ul li a {
   display: block;
@@ -1602,3 +1608,30 @@ footer p a:hover {
   width:1280px;
   height:720px;
 } */
+#contacts{
+  color:#f5a425;
+}
+.cont{
+  color:#fff;
+  font-size:15px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.list{
+  color:#ffffff;
+}
+.vl {
+  border-left: 6px solid #ffffff;
+  height: 500px;
+}
