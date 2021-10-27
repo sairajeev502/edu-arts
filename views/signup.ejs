@@ -86,6 +86,31 @@ https://templatemo.com/tm-557-grad-school
 
     <div id="desc">successfully signup Go to Login </div>
   </div>
+</form>
+<script>
+    const form = document.querySelector('form')
+    form.addEventListener('submit', async e => {
+        e.preventDefault()
+
+        const email = form.email.value
+        const name = form.name.value
+        const pass = form.psw.value
+        const pswRepeat = form["psw-repeat"].value
+
+        const res = await fetch('/regiser', {
+            method: 'POST',
+            body: JSON.stringify({
+                email, name, pass
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await res.json()
+
+        console.log(data)
+    })
+</script>
 
 
 
