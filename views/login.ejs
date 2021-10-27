@@ -42,24 +42,26 @@ https://templatemo.com/tm-557-grad-school
     </div>
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
     <nav id="menu" class="main-nav" role="navigation">
-      <ul class="main-menu">
+      <!-- <ul class="main-menu">
         <li><a href="/">Home</a></li>
         <li><a href="/">About Us</a></li>
         <li><a href="/">Courses</a></li>
-        <!-- <li><a href="#section5">Video</a></li> -->
         <li><a href="/">Contact</a></li>
         <li><a href="https://templatemo.com" class="external">External</a></li>
-      </ul>
+      </ul> -->
     </nav>
+    <style>
+      .main-header{
+        position: static;
+      }
+    </style>
   </header>
-  <br>
-  <br>
-  <br>
+
   <div id="toast">
-    
+
     <div id="desc">successfully logged in</div>
   </div>
-  <form action="action_page.php" style="border:1px solid #ccc">
+  <form action="/" >
     <div class="container col-md-6">
       <h1>Login</h1>
       <hr>
@@ -80,7 +82,7 @@ https://templatemo.com/tm-557-grad-school
       </div>
     </div>
   </form>
-
+  
 
   <footer>
     <div class="container">
@@ -106,8 +108,10 @@ https://templatemo.com/tm-557-grad-school
       }, 5000);
     }
   </script>
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/lightbox.js"></script>
@@ -115,3 +119,25 @@ https://templatemo.com/tm-557-grad-school
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js"></script>
+<script>
+function showPassword() {
+  var x = document.getElementById("psw");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+</script>
+<script>
+  function launch_toast() {
+    var x = document.getElementById("toast")
+    x.className = "show";
+    setTimeout(function() {
+      x.className = x.className.replace("show", "");
+    }, 5000);
+  }
+</script>
+</body>
+</html>

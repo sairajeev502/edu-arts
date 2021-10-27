@@ -167,7 +167,7 @@ a.menu-link { display: none; }
 .main-header {
     background-color: #F5A425;
     height: 80px;
-    position: fixed;
+    position: static;
     z-index: 12;
     width: 100%;
     top: 0;
@@ -1537,6 +1537,11 @@ section.contact form button {
 footer {
     background-color: #152036;
     text-align: center;
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  
 }
 
 footer p {

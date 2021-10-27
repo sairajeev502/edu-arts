@@ -15,6 +15,13 @@ app.get("/signup",function(req,res){
 app.get("/login",function(req,res){
   res.render("login");
 });
+app.get("/adminLogin",function(req,res){
+  res.render("adminLogin");
+});
+app.get("/adminDashboard",function(req,res){
+  res.render("adminDashboard");
+});
+
 app.get("/",function(req,res){
   res.render("index");
 });

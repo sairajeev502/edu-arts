@@ -36,6 +36,11 @@ https://templatemo.com/tm-557-grad-school
 
   <!--header-->
   <header class="main-header clearfix" role="header">
+    <style >
+      .main-header{
+        position: static;
+      }
+    </style>
     <div class="logo" >
       <!-- <a href="#"><em><i><span style="color:#ffffff">T</span>HOORIGAII</i><em></a> -->
             <img id="logo" src="assets/images/logo.png" alt="">
@@ -55,7 +60,7 @@ https://templatemo.com/tm-557-grad-school
 <br>
 <br>
 <br>
-  <form action="action_page.php" style="border:1px solid #ccc">
+  <form action="/" style="border:1px solid #ccc">
   <div class="container col-md-6">
     <h1>Course Registration Form</h1>
     <hr>
@@ -77,68 +82,86 @@ https://templatemo.com/tm-557-grad-school
 
     <input type="text" placeholder="Enter your answer" name="q1" required><br>
 
-    <label for="age"><b>Age*</b></label>
-    <input id="age" type="text" placeholder="Enter Age" name="age" required><br>
+    <label for="age"><b>Age*</b></label><br>
+
+    <input  type="radio" id="age1"  name="age" value="age1" required>
+    <label for="age1">Age: 5 years to 8 years </label><br>
+
+
+    <input  type="radio" id="age2"  name="age" value="age2" required>
+    <label for="age2">Age: 9 years and above </label><br>
+
+
+    <label for="ag">Enter age</label>
+    <input type="text" name="ag"id="ag" value="10"><br>
+
 
     <label for="course"><b>Courses you are interested in*</b></label>
     <br>
-    <input type="checkbox" id="c1" name="c1" value="">
-  <label for="c1">Pencil Drawing </label><br>
+    <button type="button" id="btnstatus"name="button" onclick="checkAge();">Click to select</button>
+    <div class="hid">
 
-  <input type="checkbox" id="c1" name="c1" value="">
-  <label for="c1"> Water colour Painting</label><br>
 
-  <input type="checkbox" id="c2" name="c2" value="">
+    <input  class="hid" type="checkbox" id="c1" name="c1" value="Pencil">
+  <label class="hid" for="c1">Pencil Drawing </label><br>
+
+  <input class="unhid" type="checkbox" id="c1" name="c1" value="Water colour">
+  <label class="unhid" for="c1"> Water colour Painting</label><br>
+
+  <input type="checkbox" id="c2" name="c2" value="Hand">
   <label for="c2">Hand Painting </label><br>
 
-  <input type="checkbox" id="c3" name="c3" value="">
+  <input type="checkbox" id="c3" name="c3" value="Origami">
 <label for="c3">Origami Classes </label><br>
 
-<input type="checkbox" id="c4" name="c4" value="">
+<input type="checkbox" id="c4" name="c4" value="Colouring">
 <label for="c4">Colouring(Crayon and pencils) </label><br>
 
-<input type="checkbox" id="c5" name="c5" value="">
+<input type="checkbox" id="c5" name="c5" value="Crush Paper">
 <label for="c5"> Crush Paper Paininting</label><br>
 
-<input class="age" type="checkbox" id="c6" name="c6" value="">
+<input class="age" type="checkbox" id="c6" name="c6" value="DIY">
 <label class="age" for="c6">DIY course(popstick,wind chimes etc)</label><br>
+</div>
+<div class="unhide">
 
-<input type="checkbox" id="c7" name="c7" value="">
+<input type="checkbox" id="c7" name="c7" value="Pencil">
 <label for="c7"> Pencil Drawing</label><br>
 
-<input type="checkbox" id="c8" name="c8" value="">
+<input type="checkbox" id="c8" name="c8" value="Oil">
 <label for="c8">Oil Pastels </label><br>
 
-<input type="checkbox" id="c9" name="c9" value="">
+<input type="checkbox" id="c9" name="c9" value="Water Colour">
 <label for="c9"> Water Colour Paininting</label><br>
 
-<input type="checkbox" id="c10" name="c10" value="">
+<input type="checkbox" id="c10" name="c10" value="Glass">
 <label for="c10"> Glass Painting</label><br>
 
-<input type="checkbox" id="c11" name="c11" value="">
+<input type="checkbox" id="c11" name="c11" value="Gouache">
 <label for="c11"> Gouache Painting</label><br>
 
-<input type="checkbox" id="c12" name="c12" value="">
+<input type="checkbox" id="c12" name="c12" value="Hand">
 <label for="c12"> Hand Painting</label><br>
 
-<input type="checkbox" id="c13" name="c13" value="">
+<input type="checkbox" id="c13" name="c13" value="Crochet">
 <label for="c13"> Crochet Classes</label><br>
 
-<input type="checkbox" id="c14" name="c14" value="">
+<input type="checkbox" id="c14" name="c14" value="Embroidery">
 <label for="c14"> Hand Embroidery</label><br>
 
-<input type="checkbox" id="c15" name="c15" value="">
+<input type="checkbox" id="c15" name="c15" value="Mandela">
 <label for="c15"> Mandela and Doodle</label><br>
 
-<input type="checkbox" id="c16" name="c16" value="">
+<input type="checkbox" id="c16" name="c16" value="Orig">
 <label for="c16"> Origami Classes</label><br>
 
 <label><b>Batch*</b></label><br>
-<input type="checkbox" id="wd" name="wd" value="">
+<input type="radio" id="wd" name="w" value="Week day">
 <label for="wd"> Week day batch</label><br>
 
-<input type="checkbox" id="we" name="we" value="">
+<input type="radio" id="we" name="w" value="Week end">
 <label for="we"> Week end batch</label><br>
+</div>
 
 <div class="clearfix">
   <button type="submit" class="signupbtn">Submit</button>
@@ -153,9 +176,9 @@ https://templatemo.com/tm-557-grad-school
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
+          <p><i class="fa fa-copyright"></i> Copyright 2021 THOORIGAII
 
-           | Design: <a href="https://templatemo.com" rel="sponsored" target="_parent">TemplateMo</a></p>
+           </p>
         </div>
       </div>
     </div>
@@ -173,10 +196,42 @@ https://templatemo.com/tm-557-grad-school
     <script src="assets/js/video.js"></script>
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
-<script>
-var elem = $('#age').value;
-if(elem <9){
- $('.age').css('display') == 'none'
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<!-- <script>
+
+var x = $("#age1").val();
+if($('#age1').is(':checked')){
+  $('.hid').show();
+  console.log("checked");
 }
+else{
+  $('.unhid').show();
+}
+
+
+
+</script> -->
+<script>
+function checkAge() {
+      if ($("#age1").prop("checked")){
+      $('.hid').show();
+
+   }
+   else{
+     $('.unhide').show();
+   }
+ }
+</script>
+<script>
+$(document).ready(function(){
+    $("form").submit(function(){
+ if ($('input:checkbox').filter(':checked').length < 1){
+        alert("Atleast one course should be selected");
+ return false;
+ }
+    });
+});
 
 </script>
