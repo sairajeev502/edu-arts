@@ -113,7 +113,8 @@ https://templatemo.com/tm-557-grad-school
           })
           const data = await res.json()
 
-          console.log(data)
+          if (data.stud)
+              window.location.assign('/')
       })
   </script>
 
@@ -138,7 +139,7 @@ https://templatemo.com/tm-557-grad-school
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <!--<script src="assets/js/custom.js"></script>-->
 <script>
 function showPassword() {
   var x = document.getElementById("psw");

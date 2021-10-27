@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require('express')
 const mongoose = require('mongoose')
 
-const app = express();
+const app = express()
 
 const authRoutes = require('./routes/authRoutes')
 
 require('dotenv').config()
 
-app.use(express.static("public"));
+app.use(express.static("public"))
 app.use(express.json())
-app.set("view engine","ejs");
+app.set("view engine","ejs")
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
     app.listen(8000, () => {
@@ -17,11 +17,11 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
     })
 })
 
-app.get("/", (req, res) => res.render("index"));
-app.get("/signup", (req, res) => res.render("signup"));
-app.get("/login",(req, res) => res.render("login"));
-app.get("/courseRegisterform", (req, res) => res.render("courseRegisterform"));
-app.get("/adminLogin",(req, res) => res.render("adminLogin"));
-app.get("/adminDashboard",(req, res) => res.render("adminDashboard"));
+app.get("/", (req, res) => res.render("index"))
+app.get("/signup", (req, res) => res.render("signup"))
+app.get("/login",(req, res) => res.render("login"))
+app.get("/courseRegisterform", (req, res) => res.render("courseRegisterform"))
+app.get("/adminLogin",(req, res) => res.render("adminLogin"))
+app.get("/adminDashboard",(req, res) => res.render("adminDashboard"))
 
 app.use(authRoutes)

@@ -71,9 +71,9 @@ https://templatemo.com/tm-557-grad-school
       <input type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password"id="psw" placeholder="Enter Password" name="psw" required>
+      <input type="password" id="psw" placeholder="Enter Password" name="psw" required>
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" id="psw" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="password" id="psw-repeat" placeholder="Repeat Password" name="psw-repeat" required>
       <div class="clearfix">
         <button type="submit"  class="signupbtn" onclick="launch_toast()">Sign Up</button>
       </div>
@@ -94,13 +94,13 @@ https://templatemo.com/tm-557-grad-school
 
         const email = form.email.value
         const name = form.name.value
-        const pass = form.psw.value
+        const password = form.psw.value
         const pswRepeat = form["psw-repeat"].value
 
-        const res = await fetch('/regiser', {
+        const res = await fetch('/register', {
             method: 'POST',
             body: JSON.stringify({
-                email, name, pass
+                email, name, password
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -108,7 +108,8 @@ https://templatemo.com/tm-557-grad-school
         })
         const data = await res.json()
 
-        console.log(data)
+        if (data.stud)
+            window.location.assign('/login')
     })
 </script>
 
@@ -145,7 +146,7 @@ https://templatemo.com/tm-557-grad-school
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <!--<script src="assets/js/custom.js"></script>-->
 <script>
 function showPassword() {
   var x = document.getElementById("psw");
