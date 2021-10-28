@@ -517,11 +517,11 @@ section.why-us {
 }
 #tabs ul li {
 
-  font-weight: 250;
+  font-weight: 50;
   font-size: 20px;
   letter-spacing: 0.2px;
   list-style-type: square;
-
+  margin-left: 3px;
 }
 @media screen and (max-width:600px){
   #tabs ul li{
@@ -612,7 +612,7 @@ section.why-us {
 .tabs-content img {
     width: 100%;
     overflow: hidden;
-    padding-right: 45px;
+
 }
 
 @media screen and (max-width: 767px) {
@@ -1541,7 +1541,7 @@ footer {
    left: 0;
    bottom: 0;
    width: 100%;
-  
+
 }
 
 footer p {
@@ -1632,6 +1632,7 @@ footer p a:hover {
 
 .container {
   padding: 2px 16px;
+  height: auto;
 }
 .list{
   color:#ffffff;
@@ -1639,4 +1640,7 @@ footer p a:hover {
 .vl {
   border-left: 6px solid #ffffff;
   height: 500px;
+}
+.profile{
+  width:100%;
 }
