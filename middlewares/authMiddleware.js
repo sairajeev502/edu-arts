@@ -1,7 +1,28 @@
 const jwt = require('jsonwebtoken')
 const Student = require('../models/Student')
+const Admin = require('../models/Admin')
 
-const checkUser = (req, res, next) => {
+const checkAdmin = (req, res, next) => {
+    const token = req.cookies.jwt
+
+    if (token) {
+        jwt.verify(token, 'thoorigaii', async (err, decodedToken) => {
+            if (err) {
+                console.log(err)
+                next()
+            } else {
+                let admin = await Admin.findById(decodedToken.id)
+                if (admin)
+                    next()
+                else
+                    res.redirect('/adminLogin')
+            }
+        })
+    } else {
+        res.redirect('/adminLogin')
+    }
+}
+const checkStudent = (req, res, next) => {
 	const token = req.cookies.jwt
 	if (token) {
 		jwt.verify(token, 'thoorigaii', async (err, decodedToken) => {
@@ -24,4 +45,4 @@ const checkUser = (req, res, next) => {
 	}
 }
 
-module.exports = { checkUser }
+module.exports = { checkStudent, checkAdmin }

@@ -2,6 +2,7 @@ const { Router } = require('express')
 const jwt = require('jsonwebtoken')
 
 const Student = require('../models/Student')
+const Admin = require('../models/Admin')
 const router = Router()
 
 const handleErrors = (err) => {
@@ -50,10 +51,28 @@ const register_post = async (req, res) => {
     } catch (e) {
         res.status(400).json({ e })
     }
+}
 
+const admin_login = async (req, res) => {
+    const { email, password } = req.body
+
+    try {
+        const admin = await Admin.login(email, password)
+        if (admin) {
+            const token = createToken(admin._id)
+            res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 })
+            res.status(200).json({ admin: admin._id })
+        } else {
+            throw Error("Wrong credentials")
+        }
+    } catch (err) {
+        const errors = handleErrors(err)
+        res.status(400).json({ err: errors })
+    }
 }
 
 router.post('/login', login_post)
+router.post('/adminlogin', admin_login)
 router.post('/register', register_post)
 
 module.exports = router
