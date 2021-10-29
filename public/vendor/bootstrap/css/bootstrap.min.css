@@ -120,7 +120,7 @@ blockquote {
 }
 
 b, strong {
-  font-weight: bolder
+  font-weight: bold;
 }
 
 small {
@@ -4682,7 +4682,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .card {
   float:left;
   width:328px;
-  height: 472px;
+  height: 738px;
   margin-left: 22px;
   display: -ms-flexbox;
   display: flex;
@@ -4819,7 +4819,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   margin-bottom: 15px
 }
 
-@media (min-width:576px) {
+@media (min-width:479px) {
   .card-deck {
     display: -ms-flexbox;
     display: flex;
@@ -4836,8 +4836,27 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     margin-bottom: 0;
     margin-left: 15px
   }
-}
 
+}
+@media (min-width:479px) and (max-width:767px){
+  .card{
+    margin-left: 50px;
+  }
+}
+@media (min-width:768px) and (max-width:900px){
+  .card{
+    margin-left: 0px;
+    height:820px;
+  }
+  .container{
+    padding: 2px 0px;
+  }
+}
+@media (max-width:320px){
+  .card{
+    margin-left: -23px;
+  }
+}
 .card-group>.card {
   margin-bottom: 15px
 }
