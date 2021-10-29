@@ -40,6 +40,9 @@ https://templatemo.com/tm-557-grad-school
       .main-header{
         position: static;
       }
+      footer{
+        position: static;
+      }
     </style>
     <div class="logo" >
       <!-- <a href="#"><em><i><span style="color:#ffffff">T</span>HOORIGAII</i><em></a> -->
@@ -73,7 +76,7 @@ https://templatemo.com/tm-557-grad-school
     <input type="text" placeholder="Enter Parent's Name" name="pname" required>
 
     <label for="dob"><b>Date of Birth*</b></label>
-    <input type="date" placeholder="Date Of Birth" name="dob" required>
+    <input type="date" id="dob"placeholder="Date Of Birth" name="dob" required>
     <br>
     <br>
     <label for="address"><b>Address*</b></label>
@@ -82,31 +85,17 @@ https://templatemo.com/tm-557-grad-school
 
     <input type="text" placeholder="Enter your answer" name="q1" required><br>
 
-    <label for="age"><b>Age*</b></label><br>
-
-    <input  type="radio" id="age1"  name="age" value="age1" required>
-    <label for="age1">Age: 5 years to 8 years </label><br>
-
-
-    <input  type="radio" id="age2"  name="age" value="age2" required>
-    <label for="age2">Age: 9 years and above </label><br>
-
-
-    <label for="ag">Enter age</label>
-    <input type="text" name="ag"id="ag" value="10"><br>
-
-
     <label for="course"><b>Courses you are interested in*</b></label>
     <br>
-    <button type="button" id="btnstatus"name="button" onclick="checkAge();">Click to select</button>
-    <div class="hid">
+    <button type="button" id="btnstatus"name="button" >Click to select</button>
 
+<!-- age 5 to 8 -->
 
     <input  class="hid" type="checkbox" id="c1" name="c1" value="Pencil">
-  <label class="hid" for="c1">Pencil Drawing </label><br>
+  <label  for="c1">Pencil Drawing </label><br>
 
-  <input class="unhid" type="checkbox" id="c1" name="c1" value="Water colour">
-  <label class="unhid" for="c1"> Water colour Painting</label><br>
+  <input  type="checkbox" id="c1" name="c1" value="Water colour">
+  <label  for="c1"> Water colour Painting</label><br>
 
   <input type="checkbox" id="c2" name="c2" value="Hand">
   <label for="c2">Hand Painting </label><br>
@@ -122,8 +111,8 @@ https://templatemo.com/tm-557-grad-school
 
 <input class="age" type="checkbox" id="c6" name="c6" value="DIY">
 <label class="age" for="c6">DIY course(popstick,wind chimes etc)</label><br>
-</div>
-<div class="unhide">
+
+<!-- age 9 and above -->
 
 <input type="checkbox" id="c7" name="c7" value="Pencil">
 <label for="c7"> Pencil Drawing</label><br>
@@ -155,13 +144,14 @@ https://templatemo.com/tm-557-grad-school
 <input type="checkbox" id="c16" name="c16" value="Orig">
 <label for="c16"> Origami Classes</label><br>
 
+
 <label><b>Batch*</b></label><br>
 <input type="radio" id="wd" name="w" value="Week day">
 <label for="wd"> Week day batch</label><br>
 
 <input type="radio" id="we" name="w" value="Week end">
 <label for="we"> Week end batch</label><br>
-</div>
+
 
 <div class="clearfix">
   <button type="submit" class="signupbtn">Submit</button>
@@ -197,41 +187,5 @@ https://templatemo.com/tm-557-grad-school
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-<!-- <script>
-
-var x = $("#age1").val();
-if($('#age1').is(':checked')){
-  $('.hid').show();
-  console.log("checked");
-}
-else{
-  $('.unhid').show();
-}
-
-
-
-</script> -->
-<script>
-function checkAge() {
-      if ($("#age1").prop("checked")){
-      $('.hid').show();
-
-   }
-   else{
-     $('.unhide').show();
-   }
- }
-</script>
-<script>
-$(document).ready(function(){
-    $("form").submit(function(){
- if ($('input:checkbox').filter(':checked').length < 1){
-        alert("Atleast one course should be selected");
- return false;
- }
-    });
-});
-
-</script>
+</body>
+</html>

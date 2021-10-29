@@ -165,8 +165,3 @@ button:hover {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 60px; opacity: 0;}
 }
-.hid,
-.unhide
-{
-  display: none;
-}
