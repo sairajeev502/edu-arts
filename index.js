@@ -15,7 +15,7 @@ app.use(cookieParser())
 app.set("view engine","ejs")
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
-    app.listen(8000, () => {
+    app.listen(process.env.PORT || 8000, () => {
         console.log("http://localhost:8000/")
     })
 })
