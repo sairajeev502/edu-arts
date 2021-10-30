@@ -174,6 +174,19 @@ https://templatemo.com/tm-557-grad-school
     </div>
   </footer>
 
+  <script>
+      const form = document.querySelector('form')
+      form.addEventListener('submit', async e => {
+          e.preventDefault()
+          const name = form.name.value
+          const phone = form.phn.value
+          const pname = form.pname.value
+          const dob = form.dob.value
+          const address = form.address.value
+          const q1 = form["q1"].value
+      })
+  </script>
+
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
