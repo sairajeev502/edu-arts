@@ -17,7 +17,7 @@ app.set("view engine","ejs")
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
     app.listen(PORT, () => {
-        console.log("http://localhost:8000/")
+        console.log("Server started at PORT:", PORT)
     })
 })
 
