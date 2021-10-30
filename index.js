@@ -6,6 +6,7 @@ const { checkAdmin } = require('./middlewares/authMiddleware')
 const app = express()
 
 const authRoutes = require('./routes/authRoutes')
+const PORT = process.env.PORT || 3000
 
 require('dotenv').config()
 
@@ -15,7 +16,7 @@ app.use(cookieParser())
 app.set("view engine","ejs")
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+    app.listen(PORT, () => {
         console.log("http://localhost:8000/")
     })
 })
