@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const Student = require('../models/Student')
 const Admin = require('../models/Admin')
+const Course = require('../models/Course')
 
 const checkAdmin = (req, res, next) => {
     const token = req.cookies.jwt
@@ -45,4 +46,10 @@ const checkStudent = (req, res, next) => {
 	}
 }
 
-module.exports = { checkStudent, checkAdmin }
+const courseDetails = async (req, res, next) => {
+    const courses = await Course.find({})
+    res.locals.courses = courses
+    next()
+}
+
+module.exports = { checkStudent, checkAdmin, courseDetails }

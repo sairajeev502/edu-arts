@@ -69,9 +69,25 @@ https://templatemo.com/tm-557-grad-school
       <th scope="col">DOB</th>
       <th scope="col">Address</th>
       <th scope="col">Courses Selected</th>
+      <th scope="col">Age Group</th>
       <th scope="col">Batch</th>
     </tr>
   </thead>
+  <tbody>
+      <% for (let i = 0; i < courses.length; i++) { %>
+        <tr>
+            <td scope="col"><%= i %></td>
+            <td scope="col"><%= courses[i].name %></td>
+            <td scope="col"><%= courses[i].phone %></td>
+            <td scope="col"><%= courses[i].pname %></td>
+            <td scope="col"><%= courses[i].dob %></td>
+            <td scope="col"><%= courses[i].address %></td>
+            <td scope="col"><%= courses[i].courses[0][0] %></td>
+            <td scope="col"><%= courses[i].courses[0][1] %></td>
+            <td scope="col"><%= courses[i].batch %></td>
+        </tr>
+        <% } %>
+  </tbody>
   <tbody>
 
   </tbody>

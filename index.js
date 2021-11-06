@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 
-const { checkAdmin } = require('./middlewares/authMiddleware')
+const { checkAdmin, courseDetails } = require('./middlewares/authMiddleware')
 const app = express()
 
 const authRoutes = require('./routes/authRoutes')
@@ -26,6 +26,6 @@ app.get("/signup", (req, res) => res.render("signup"))
 app.get("/login",(req, res) => res.render("login"))
 app.get("/courseRegisterform", (req, res) => res.render("courseRegisterform"))
 app.get("/adminLogin",(req, res) => res.render("adminLogin"))
-app.get("/adminDashboard", checkAdmin, (req, res) => res.render("adminDashboard"))
+app.get("/adminDashboard", checkAdmin, courseDetails, (req, res) => res.render("adminDashboard"))
 
 app.use(authRoutes)

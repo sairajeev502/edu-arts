@@ -63,7 +63,7 @@ https://templatemo.com/tm-557-grad-school
 <br>
 <br>
 <br>
-  <form action="/" style="border:1px solid #ccc">
+  <form style="border:1px solid #ccc">
   <div class="container col-md-6">
     <h1>Course Registration Form</h1>
     <hr>
@@ -91,57 +91,57 @@ https://templatemo.com/tm-557-grad-school
 
 <!-- age 5 to 8 -->
 
-    <input  class="hid" type="checkbox" id="c1" name="c1" value="Pencil">
-  <label  for="c1">Pencil Drawing </label><br>
+    <input  class="hid courseCheckbox" type="checkbox" id="c0" data-age="5-8" name="c0" value="Pencil Drawing">
+  <label  for="c0">Pencil Drawing </label><br>
 
-  <input  type="checkbox" id="c1" name="c1" value="Water colour">
+  <input  type="checkbox" id="c1" name="c1" data-age="5-8" class="courseCheckbox" value="Water colour Painting">
   <label  for="c1"> Water colour Painting</label><br>
 
-  <input type="checkbox" id="c2" name="c2" value="Hand">
+  <input type="checkbox" id="c2" name="c2" data-age="5-8" class="courseCheckbox" value="Hand Painting">
   <label for="c2">Hand Painting </label><br>
 
-  <input type="checkbox" id="c3" name="c3" value="Origami">
+  <input type="checkbox" id="c3" name="c3" data-age="5-8" class="courseCheckbox" value="Origami Classes">
 <label for="c3">Origami Classes </label><br>
 
-<input type="checkbox" id="c4" name="c4" value="Colouring">
+<input type="checkbox" id="c4" name="c4" data-age="5-8" class="courseCheckbox" value="Colouring">
 <label for="c4">Colouring(Crayon and pencils) </label><br>
 
-<input type="checkbox" id="c5" name="c5" value="Crush Paper">
-<label for="c5"> Crush Paper Paininting</label><br>
+<input type="checkbox" id="c5" name="c5" data-age="5-8" class="courseCheckbox" value="Crush Paper Painting">
+<label for="c5"> Crush Paper Painting</label><br>
 
-<input class="age" type="checkbox" id="c6" name="c6" value="DIY">
+<input class="age" type="checkbox" id="c6" name="c6" data-age="5-8" class="courseCheckbox" value="DIY course">
 <label class="age" for="c6">DIY course(popstick,wind chimes etc)</label><br>
 
 <!-- age 9 and above -->
 
-<input type="checkbox" id="c7" name="c7" value="Pencil">
+<input type="checkbox" id="c7" name="c7" data-age="9+" class="courseCheckbox" value="Pencil Drawing">
 <label for="c7"> Pencil Drawing</label><br>
 
-<input type="checkbox" id="c8" name="c8" value="Oil">
+<input type="checkbox" id="c8" name="c8" data-age="9+" class="courseCheckbox" value="Oil Pastels">
 <label for="c8">Oil Pastels </label><br>
 
-<input type="checkbox" id="c9" name="c9" value="Water Colour">
-<label for="c9"> Water Colour Paininting</label><br>
+<input type="checkbox" id="c9" name="c9" data-age="9+" class="courseCheckbox" value="Water Colour Painting">
+<label for="c9"> Water Colour Painting</label><br>
 
-<input type="checkbox" id="c10" name="c10" value="Glass">
+<input type="checkbox" id="c10" name="c10" data-age="9+" class="courseCheckbox" value="Glass Painting">
 <label for="c10"> Glass Painting</label><br>
 
-<input type="checkbox" id="c11" name="c11" value="Gouache">
+<input type="checkbox" id="c11" name="c11" data-age="9+" class="courseCheckbox" value="Gouache Painting">
 <label for="c11"> Gouache Painting</label><br>
 
-<input type="checkbox" id="c12" name="c12" value="Hand">
+<input type="checkbox" id="c12" name="c12" data-age="9+" class="courseCheckbox" value="Hand Painting">
 <label for="c12"> Hand Painting</label><br>
 
-<input type="checkbox" id="c13" name="c13" value="Crochet">
+<input type="checkbox" id="c13" name="c13" data-age="9+" class="courseCheckbox" value="Crochet Classes">
 <label for="c13"> Crochet Classes</label><br>
 
-<input type="checkbox" id="c14" name="c14" value="Embroidery">
+<input type="checkbox" id="c14" name="c14" data-age="9+" class="courseCheckbox" value="Hand Embroidery">
 <label for="c14"> Hand Embroidery</label><br>
 
-<input type="checkbox" id="c15" name="c15" value="Mandela">
+<input type="checkbox" id="c15" name="c15" data-age="9+" class="courseCheckbox" value="Mandela and Doodle">
 <label for="c15"> Mandela and Doodle</label><br>
 
-<input type="checkbox" id="c16" name="c16" value="Orig">
+<input type="checkbox" id="c16" name="c16" data-age="9+" class="courseCheckbox" value="Origami Classes">
 <label for="c16"> Origami Classes</label><br>
 
 
@@ -183,7 +183,36 @@ https://templatemo.com/tm-557-grad-school
           const pname = form.pname.value
           const dob = form.dob.value
           const address = form.address.value
-          const q1 = form["q1"].value
+          const source = form["q1"].value
+          const courses = 
+                    Array
+                    .from(document.querySelectorAll('.courseCheckbox'))
+                    .filter(e => e.checked)
+                    .map(e => [e.value, e.getAttribute("data-age")])
+          const batch = form.w.value
+                console.log({
+                          name, phone, pname, dob, address, source,
+                          courses, batch
+                      })
+            
+          try {
+                const res = await fetch('/course', {
+                          method: 'POST',
+                          body: JSON.stringify({
+                                    name, phone, pname,
+                                    dob, address, source,
+                                    courses, batch
+                                }),
+                          headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                      })
+                const data = await res.json()
+                if (data.id)
+                    window.location.assign('/')
+            } catch (e) {
+                console.error(e)
+            } 
       })
   </script>
 
@@ -198,7 +227,7 @@ https://templatemo.com/tm-557-grad-school
     <script src="assets/js/tabs.js"></script>
     <script src="assets/js/video.js"></script>
     <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <!--<script src="assets/js/custom.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
