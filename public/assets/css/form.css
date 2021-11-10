@@ -1,5 +1,7 @@
 * {box-sizing: border-box}
-
+.form{
+  margin-top: 1rem ;
+}
 /* Full-width input fields */
   input[type=text], input[type=password] {
   width: 100%;

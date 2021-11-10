@@ -21,14 +21,6 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
     <link rel="stylesheet" href="assets/css/form.css">
-
-<!--
-
-TemplateMo 557 Grad School
-
-https://templatemo.com/tm-557-grad-school
-
--->
   </head>
 
 <body>
@@ -36,14 +28,6 @@ https://templatemo.com/tm-557-grad-school
 
   <!--header-->
   <header class="main-header clearfix" role="header">
-    <style >
-      .main-header{
-        position: static;
-      }
-      footer{
-        position: static;
-      }
-    </style>
     <div class="logo" >
       <!-- <a href="#"><em><i><span style="color:#ffffff">T</span>HOORIGAII</i><em></a> -->
             <img id="logo" src="assets/images/logo.png" alt="">
@@ -56,126 +40,156 @@ https://templatemo.com/tm-557-grad-school
         <li><a href="/">Courses</a></li>
         <!-- <li><a href="#section5">Video</a></li> -->
         <li><a href="/">Contact</a></li>
-        <li><a href="https://templatemo.com" class="external">External</a></li>
+        <!-- <li><a href="#" class="external">External</a></li> -->
       </ul>
     </nav>
+    <style media="screen">
+    footer {
+        background-color: #152036;
+        text-align: center;
+        position: static;
+
+    }
+    .main-header{
+      position: fixed;
+    }
+      </style>
   </header>
 <br>
-<br>
-<br>
-  <form style="border:1px solid #ccc">
-  <div class="container col-md-6">
-    <h1>Course Registration Form</h1>
-    <hr>
-    <label for="name"><b>Name*</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required>
-    <label for="phn"><b>Phone Number*</b></label>
-    <input type="text" placeholder="Enter Phone Number" name="phn" required>
-
-    <label for="pname"><b>Parent's Name*</b></label>
-    <input type="text" placeholder="Enter Parent's Name" name="pname" required>
-
-    <label for="dob"><b>Date of Birth*</b></label>
-    <input type="date" id="dob"placeholder="Date Of Birth" name="dob" required>
-    <br>
-    <br>
-    <label for="address"><b>Address*</b></label>
-    <input type="text" placeholder="Enter Address" name="address" required>
-    <label for="q1"><b>How did you get to know this class?*</b></label>
-
-    <input type="text" placeholder="Enter your answer" name="q1" required><br>
-
-    <label for="course"><b>Courses you are interested in*</b></label>
-    <br>
-    <button type="button" id="btnstatus"name="button" >Click to select</button>
-
-<!-- age 5 to 8 -->
-
-    <input  class="hid courseCheckbox" type="checkbox" id="c0" data-age="5-8" name="c0" value="Pencil Drawing">
-  <label  for="c0">Pencil Drawing </label><br>
-
-  <input  type="checkbox" id="c1" name="c1" data-age="5-8" class="courseCheckbox" value="Water colour Painting">
-  <label  for="c1"> Water colour Painting</label><br>
-
-  <input type="checkbox" id="c2" name="c2" data-age="5-8" class="courseCheckbox" value="Hand Painting">
-  <label for="c2">Hand Painting </label><br>
-
-  <input type="checkbox" id="c3" name="c3" data-age="5-8" class="courseCheckbox" value="Origami Classes">
-<label for="c3">Origami Classes </label><br>
-
-<input type="checkbox" id="c4" name="c4" data-age="5-8" class="courseCheckbox" value="Colouring">
-<label for="c4">Colouring(Crayon and pencils) </label><br>
-
-<input type="checkbox" id="c5" name="c5" data-age="5-8" class="courseCheckbox" value="Crush Paper Painting">
-<label for="c5"> Crush Paper Painting</label><br>
-
-<input class="age" type="checkbox" id="c6" name="c6" data-age="5-8" class="courseCheckbox" value="DIY course">
-<label class="age" for="c6">DIY course(popstick,wind chimes etc)</label><br>
-
-<!-- age 9 and above -->
-
-<input type="checkbox" id="c7" name="c7" data-age="9+" class="courseCheckbox" value="Pencil Drawing">
-<label for="c7"> Pencil Drawing</label><br>
-
-<input type="checkbox" id="c8" name="c8" data-age="9+" class="courseCheckbox" value="Oil Pastels">
-<label for="c8">Oil Pastels </label><br>
-
-<input type="checkbox" id="c9" name="c9" data-age="9+" class="courseCheckbox" value="Water Colour Painting">
-<label for="c9"> Water Colour Painting</label><br>
-
-<input type="checkbox" id="c10" name="c10" data-age="9+" class="courseCheckbox" value="Glass Painting">
-<label for="c10"> Glass Painting</label><br>
-
-<input type="checkbox" id="c11" name="c11" data-age="9+" class="courseCheckbox" value="Gouache Painting">
-<label for="c11"> Gouache Painting</label><br>
-
-<input type="checkbox" id="c12" name="c12" data-age="9+" class="courseCheckbox" value="Hand Painting">
-<label for="c12"> Hand Painting</label><br>
-
-<input type="checkbox" id="c13" name="c13" data-age="9+" class="courseCheckbox" value="Crochet Classes">
-<label for="c13"> Crochet Classes</label><br>
-
-<input type="checkbox" id="c14" name="c14" data-age="9+" class="courseCheckbox" value="Hand Embroidery">
-<label for="c14"> Hand Embroidery</label><br>
-
-<input type="checkbox" id="c15" name="c15" data-age="9+" class="courseCheckbox" value="Mandela and Doodle">
-<label for="c15"> Mandela and Doodle</label><br>
-
-<input type="checkbox" id="c16" name="c16" data-age="9+" class="courseCheckbox" value="Origami Classes">
-<label for="c16"> Origami Classes</label><br>
-
-
-<label><b>Batch*</b></label><br>
-<input type="radio" id="wd" name="w" value="Week day">
-<label for="wd"> Week day batch</label><br>
-
-<input type="radio" id="we" name="w" value="Week end">
-<label for="we"> Week end batch</label><br>
-
-
-<div class="clearfix">
-  <button type="submit" class="signupbtn">Submit</button>
-</div>
-
+  <br>
+  <br>
+    <form style="border:1px solid #ccc" class="form">
+    <div class="container col-md-6">
+      <h1>Course Registration Form</h1>
+      <hr>
+      <label for="name"><b>Name*</b></label>
+      <input type="text" placeholder="Enter Name" name="name" required>
+      <label for="phn"><b>Phone Number*</b></label>
+      <input type="text" placeholder="Enter Phone Number" name="phn" required>
+  
+      <label for="pname"><b>Parent's Name*</b></label>
+      <input type="text" placeholder="Enter Parent's Name" name="pname" required>
+  
+      <label for="dob"><b>Date of Birth*</b></label>
+      <input type="date" id="dob"placeholder="Date Of Birth" name="dob" required>
+      <br>
+      <br>
+      <label for="address"><b>Address*</b></label>
+      <input type="text" placeholder="Enter Address" name="address" required>
+      <label for="q1"><b>How did you get to know this class?*</b></label>
+  
+      <input type="text" placeholder="Enter your answer" name="q1" required><br>
+  
+      <label for="course"><b>Courses you are interested in*</b></label>
+      <br>
+      <button type="button" id="btnstatus"name="button" >Click to select</button>
+  
+  <!-- age 5 to 8 -->
+  
+      <input  class="hid courseCheckbox" type="checkbox" id="c0" data-age="5-8" name="c0" value="Pencil Drawing">
+    <label  for="c0">Pencil Drawing </label><br>
+  
+    <input  type="checkbox" id="c1" name="c1" data-age="5-8" class="courseCheckbox" value="Water colour Painting">
+    <label  for="c1"> Water colour Painting</label><br>
+  
+    <input type="checkbox" id="c2" name="c2" data-age="5-8" class="courseCheckbox" value="Hand Painting">
+    <label for="c2">Hand Painting </label><br>
+  
+    <input type="checkbox" id="c3" name="c3" data-age="5-8" class="courseCheckbox" value="Origami Classes">
+  <label for="c3">Origami Classes </label><br>
+  
+  <input type="checkbox" id="c4" name="c4" data-age="5-8" class="courseCheckbox" value="Colouring">
+  <label for="c4">Colouring(Crayon and pencils) </label><br>
+  
+  <input type="checkbox" id="c5" name="c5" data-age="5-8" class="courseCheckbox" value="Crush Paper Painting">
+  <label for="c5"> Crush Paper Painting</label><br>
+  
+  <input class="age" type="checkbox" id="c6" name="c6" data-age="5-8" class="courseCheckbox" value="DIY course">
+  <label class="age" for="c6">DIY course(popstick,wind chimes etc)</label><br>
+  
+  <!-- age 9 and above -->
+  
+  <input type="checkbox" id="c7" name="c7" data-age="9+" class="courseCheckbox" value="Pencil Drawing">
+  <label for="c7"> Pencil Drawing</label><br>
+  
+  <input type="checkbox" id="c8" name="c8" data-age="9+" class="courseCheckbox" value="Oil Pastels">
+  <label for="c8">Oil Pastels </label><br>
+  
+  <input type="checkbox" id="c9" name="c9" data-age="9+" class="courseCheckbox" value="Water Colour Painting">
+  <label for="c9"> Water Colour Painting</label><br>
+  
+  <input type="checkbox" id="c10" name="c10" data-age="9+" class="courseCheckbox" value="Glass Painting">
+  <label for="c10"> Glass Painting</label><br>
+  
+  <input type="checkbox" id="c11" name="c11" data-age="9+" class="courseCheckbox" value="Gouache Painting">
+  <label for="c11"> Gouache Painting</label><br>
+  
+  <input type="checkbox" id="c12" name="c12" data-age="9+" class="courseCheckbox" value="Hand Painting">
+  <label for="c12"> Hand Painting</label><br>
+  
+  <input type="checkbox" id="c13" name="c13" data-age="9+" class="courseCheckbox" value="Crochet Classes">
+  <label for="c13"> Crochet Classes</label><br>
+  
+  <input type="checkbox" id="c14" name="c14" data-age="9+" class="courseCheckbox" value="Hand Embroidery">
+  <label for="c14"> Hand Embroidery</label><br>
+  
+  <input type="checkbox" id="c15" name="c15" data-age="9+" class="courseCheckbox" value="Mandela and Doodle">
+  <label for="c15"> Mandela and Doodle</label><br>
+  
+  <input type="checkbox" id="c16" name="c16" data-age="9+" class="courseCheckbox" value="Origami Classes">
+  <label for="c16"> Origami Classes</label><br>
+  
+  
+  <label><b>Batch*</b></label><br>
+  <input type="radio" id="wd" name="w" value="Week day">
+  <label for="wd"> Week day batch</label><br>
+  
+  <input type="radio" id="we" name="w" value="Week end">
+  <label for="we"> Week end batch</label><br>
+  
+  
+  <div class="clearfix">
+    <button type="submit" class="signupbtn">Submit</button>
   </div>
-</form>
-
-
-
+  
+    </div>
+  </form>
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <p><i class="fa fa-copyright"></i> Copyright 2021 THOORIGAII
 
-           </p>
+            <a  rel="sponsored" target="_parent"></a></p>
         </div>
       </div>
     </div>
   </footer>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-      const form = document.querySelector('form')
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+          if($(e.target).hasClass('external')) {
+            return;
+          }
+          // e.preventDefault();
+          $('#menu').removeClass('active');
+          showSection($(this).attr('href'), true);
+        });
+        const form = document.querySelector('form')
       form.addEventListener('submit', async e => {
           e.preventDefault()
           const name = form.name.value
@@ -214,20 +228,7 @@ https://templatemo.com/tm-557-grad-school
                 console.error(e)
             } 
       })
-  </script>
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <!--<script src="assets/js/custom.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </script>
 </body>
 </html>
+
